@@ -44,8 +44,6 @@ RUN wget ${TIZEN_STUDIO_URL} \
   && echo y | ./${TIZEN_STUDIO_FILE} --accept-license \
   && rm ${TIZEN_STUDIO_FILE}
 
-# Copy sample author certificate and profiles.xml
-COPY --chown=${USER} tizen-profile/author.p12 author.p12
 COPY --chown=${USER} tizen-profile/profiles.xml ${HOME}/tizen-studio-data/profile/profiles.xml
 
 # Container is intentionally started under the root user.
